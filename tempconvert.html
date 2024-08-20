@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" type="text">
+    <button onclick="check()">check</button>
+    <div id="result"></div>
+</body>
+<script>
+    function check(params) {
+        let input = document.getElementById('input')
+        let result = document.getElementById('result')
+
+        inputvalue = Number(input.value)
+        let convert = (inputvalue * 9/5) + 32
+        result.innerHTML = convert
+    }
+
+    function school(params){
+        let a = 4
+        return function church(params){
+            let b = 6
+            return function hospital(params) {
+                let c = 8
+            }
+        }
+    }
+    
+    school()()()
+</script>
+</html>

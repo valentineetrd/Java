@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let wisdom = {
+        name: 'wisdom',
+        age:14,
+        class: 'jss3',
+        occupation:'student',
+        swim: function(){
+            return `i am swimmming`
+        },
+        isShouting:true
+    }
+    
+    console.log(wisdom.name);
+    console.log(wisdom['name']);
+    
+  
+    
+    wisdom.swim = function (){
+        return('i hate swimming , please leave me');   
+    }
+
+
+    console.log(wisdom);
+    console.log(wisdom.swim());
+    wisdom.isShouting = !wisdom.isShouting
+
+
+    let arr = [1,2,3,4,5,5,6,5,4]
+    let i = 0
+    for (let num of arr){
+        console.log(`${num} * ${i} = ${num*i} `);
+        i++
+    }
+    for (let key in wisdom){
+        console.log(`${key} : ${wisdom[key]}`);
+        
+    }
+
+
+
+
+
+    const users = {
+  Alex: {
+    email: 'alex@alex.com',
+    skills: ['HTML', 'CSS', 'JavaScript'],
+    age: 20,
+    isLoggedIn: false,
+    points: 30
+  },
+  Asab: {
+    email: 'asab@asab.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'Redux', 'MongoDB', 'Express', 'React', 'Node'],
+    age: 25,
+    isLoggedIn: false,
+    points: 50
+  },
+  Brook: {
+    email: 'daniel@daniel.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
+    age: 30,
+    isLoggedIn: true,
+    points: 50
+  },
+  Daniel: {
+    email: 'daniel@alex.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  },
+  John: {
+    email: 'john@john.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+    age: 20,
+    isLoggedIn: true,
+    points: 50
+  },
+  Thomas: {
+    email: 'thomas@thomas.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  },
+  Paul: {
+    email: 'paul@paul.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  }
+}
+
+let pointcount = 0
+for (const key in users){
+    if(users[key].points >= 50){
+        pointcount++
+    }
+    if (users[key].points >= 50){
+        console.log(`${key} has ${users[key].points}points`);
+    }
+   
+    
+}
+console.log(pointcount);
+
+
+
+
+let isLoggedIn = 0
+for (const key in users){
+    if(users[key].isLoggedIn === true){
+        isLoggedIn++
+    }
+    if (users[key].isLoggedIn === true){
+        console.log(`${key} loggedin `);
+    }
+   
+    
+}
+console.log(isLoggedIn);
+</script>
+</html>
+
