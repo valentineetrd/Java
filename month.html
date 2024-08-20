@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+</body>
+</html>
+<script>
+    function check(params) {
+        let key = document.getElementById('input').value.toloercase().trim() 
+        switch (key) {
+            case "":
+                alert('please input')
+            case 'february':
+                alert('february has 28 days')
+                break;
+            case 'September':
+            case 'april':
+            case 'june':
+            case 'november':
+                alert(`${key} has 30 days`)
+            default:
+                break;
+        }
+    }
+</script>

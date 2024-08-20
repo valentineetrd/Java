@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .app-logo h1 {
+            font-size: 45px;
+            color: #00A6A6;
+        }
+
+        .app-logo h1 span {
+            color: #BBDEF0;
+        }
+
+        .app {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            border: 2px solid #00A6A6;
+            border-radius: 5px;
+        }
+
+        .app-screen {
+            height: 50px;
+            width: 90%;
+            border: 2px solid #BBDEF0;
+            border-radius: 10px;
+            background-color: #F0F0F0;
+            margin: auto;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .app-screen {
+            padding: 2px;
+        }
+
+        .app-screen h1 {
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .app-btn {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: auto;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-bottom: 5px;
+        }
+
+        .app-btn button {
+            height: 40px;
+            width: 30px;
+            flex: 1 1 25%;
+            border: 1px solid red;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .app-btn button:hover {
+            color: white;
+            background-color: orange;
+            height: 40px;
+            width: 30px;
+            flex: 1 1 25%;
+            border: 1px solid pink;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        @media (max-width: 500px) {
+            section {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <div class="app-logo">
+        </div>
+        <div class="app">
+            <div class="app-screen">
+                <h1 id="displayScreen">Select a month to see the number of days</h1>
+            </div>
+            <div class="app-btn">
+                <button type="button" onclick="initializeMonthButtons(1)">Jan</button>
+                <button type="button" onclick="initializeMonthButtons(2)">Feb</button>
+                <button type="button" onclick="initializeMonthButtons(3)">Mar</button>
+                <button type="button" onclick="initializeMonthButtons(4)">Apr</button>
+                <button type="button" onclick="initializeMonthButtons(5)">May</button>
+                <button type="button" onclick="initializeMonthButtons(6)">Jun</button>
+                <button type="button" onclick="initializeMonthButtons(7)">Jul</button>
+                <button type="button" onclick="initializeMonthButtons(8)">Aug</button>
+                <button type="button" onclick="initializeMonthButtons(9)">Sep</button>
+                <button type="button" onclick="initializeMonthButtons(10)">Oct</button>
+                <button type="button" onclick="initializeMonthButtons(11)">Nov</button>
+                <button type="button" onclick="initializeMonthButtons(12)">Dec</button>
+            </div>
+        </div>
+    </section>
+    <script>
+                let selectedMonths;
+
+        function initializeMonthButtons(monthnumber) {
+            selectedMonths = monthnumber;
+
+            displaySelectedMonth()
+        }
+
+        function displaySelectedMonth() {
+            const displayScreen = document.getElementById('displayScreen');
+
+            switch (selectedMonths) {
+                case 1:
+                    displayScreen.textContent = `January 2024 has "31 days"`;
+                    break;
+                case 2:
+                    displayScreen.textContent = `February 2024 has "29 days"`;
+                    break;
+                case 3:
+                    displayScreen.textContent = `March 2024 has "31 days"`;
+                    break;
+                case 4:
+                    displayScreen.textContent = `April 2024 has "30 days"`;
+                    break;
+                case 5:
+                    displayScreen.textContent = `May 2024 has "31 days"`;
+                    break;
+                case 6:
+                    displayScreen.textContent = `June 2024 has "30 days"`;
+                    break;
+                case 7:
+                    displayScreen.textContent = `July 2024 has "31 days"`;
+                    break;
+                case 8:
+                    displayScreen.textContent = `August 2024 has "31 days"`;
+                    break;
+                case 9:
+                    displayScreen.textContent = `September 2024 has "30 days"`;
+                    break;
+                case 10:
+                    displayScreen.textContent = `October 2024 has "31 days"`;
+                    break;
+                case 11:
+                    displayScreen.textContent = `November 2024 has "30 days"`;
+                    break;
+                case 12:
+                    displayScreen.textContent = `December 2024 has "31 days"`;
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

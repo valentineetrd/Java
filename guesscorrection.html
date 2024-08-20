@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    guess from 0-9
+    <input type="number" min="0" max="0" id='input'>
+    <button onclick="guess()"> guess </button>
+</body>
+</html>
+<script>
+    function guess() {
+        let input  = document.getElementById('input')
+        if(input.value.trim() === ''){
+            alert('input is not accepted, pick from 0-9')
+        }
+        if (input.value < 0 || input.value > 9){
+            alert('input is not accepted')
+        } else {
+            let randomNum = Math.floor(Math.random() * 10)
+            if (Number(input.value) === randomNum){
+                alert(` you guessed right , correct ans is ${randomNum}, which is right . you won!`)
+            }else{
+                alert(` you lost! , correct ans is ${randomNum},`)
+            }
+        }
+    }
+</script>

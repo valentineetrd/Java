@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" type="text">
+    <button onclick="helpDelete()">Delte</button>
+    <button onclick="sensor()">Click me</button>
+    <button onclick="triggerPrompt()"></button>
+    <div id="preview">
+
+    </div>
+</body>
+</html>
+<script>
+    // const preview = docment.getElementById("preview")
+    // function sensor(){
+    //     const input = document.getElementById("input").value
+    //     const sensoredWord = input.replaceAll("shit","****").replaceAll("stupid","*****")
+    //     .replaceAll("fuck","****").replaceAll("foolish","*******")
+    //     preview.innerHTML = sensoredWord
+    // }
+
+    let num = 3
+    if (num > 0) {
+    console.log(`${num} is a positive number`)
+    // jbjb
+    }
+    //  3 is a positive number
+
+    let val2  = 0
+    val2 -= 4
+    val2 = val2 -4
+    console.log(val2);
+    
+    let boolean = '3' === 3
+    console.log(boolean);
+
+    let ourvalue = 1
+
+    // if (ourvalue > 0){
+    //     console.log(`${ourvalue} is a positive number`);
+    // }else if (ourvalue === 0){
+    //     console.log();
+        
+    // }
+    switch (key) {
+        case "sunny":
+            console.log("it is sunny");
+            
+            break;
+        case "sunny":
+            console.log("it is rainy");
+            
+            break;
+        case "sunny":
+            console.log("it is cloudy");
+            
+            break;
+    
+        default:
+            console.log("we dont know what the weather is right now");
+            
+            break;
+    }
+    window.alert("heyyyyyy clasass")
+
+    function helpDelete(params) {
+        let confirmer = window.confirm("are you sure")
+        if (confirmer) {
+            alert("delete successful");
+        } else {
+            alert("coulnt delete at the moment");
+        }
+    }
+
+    window.prompt("can i know your name?" , "input here")
+
+   function triggerPrompt() {
+        let ourPrompt = window.prompt("can i know your name")
+        if(ourPrompt.trim() === "") {
+            alert("you didnt provide a name")
+        }else{
+            alert(`hi ${ourPrompt}`)
+        }
+   }
+       
+</script>

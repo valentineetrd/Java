@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Health Checker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .app-logo {
+            text-align: center;
+        }
+
+        .app-logo h1 {
+            font-size: 35px;
+            color: #1E88E5;
+        }
+
+        .app {
+            height: 60%;
+            width: 40%;
+            border: 1.5px solid #BBDEFB;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #FAFAFA;
+            ;
+        }
+
+        .weight-box {
+            width: 30%;
+            height: 65px;
+            border: 1.5px solid #BBDEFB;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 8px;
+            margin-bottom: 10px;
+        }
+
+        .weight-box h1 {
+            color: #212121;
+        }
+
+        .weight-box hr {
+            width: 100%;
+            height: 2px;
+            background-color: #BBDEFB;
+            border: none;
+        }
+
+        .weight-box input {
+            width: 96%;
+            height: 28px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            color: #212121;
+        }
+
+        .height-box {
+            width: 30%;
+            height: 65px;
+            border: 1.5px solid #BBDEFB;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .height-box h1 {
+            color: #212121;
+        }
+
+        .height-box hr {
+            width: 100%;
+            height: 2px;
+            background-color: #BBDEFB;
+            border: none;
+        }
+
+        .height-box input {
+            width: 96%;
+            height: 28px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            color: #212121;
+        }
+
+        .app-btn {
+            width: 40%;
+            margin-top: 20px;
+        }
+
+        .app-btn button {
+            width: 100%;
+            height: 43px;
+            font-size: 22px;
+            font-weight: 600;
+            color: white;
+            background-color: #1E88E5;
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .app-btn button:hover {
+            background-color: #1565C0;
+        }
+
+        .display-box {
+            width: 70%;
+            margin-top: auto;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .display-box h1 {
+            color: #212121;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="app-logo">
+            <h1>BMI Health Checker</h1>
+        </div>
+        <div class="app">
+            <div class="weight-box">
+                <h1>Weight (Kg)</h1>
+                <hr>
+                <input id="weightInput" type="text">
+            </div>
+            <div class="height-box">
+                <h1>Height (m)</h1>
+                <hr>
+                <input id="heightInput" type="text">
+            </div>
+            <div class="app-btn">
+                <button onclick="calculateBMI()">Calculate BMI</button>
+            </div>
+            <div class="display-box">
+                <h1 id="output"></h1>
+            </div>
+        </div>
+</body>
+</section>
+    <script>
+        function calculateBMI() {
+        let weightStr = document.getElementById('weightInput').value;
+        let heightStr = document.getElementById('heightInput').value;
+
+        let weight = parseFloat(weightStr);
+        let height = parseFloat(heightStr);
+
+        if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+            document.getElementById('output').innerText = 'Please enter valid positive numbers for weight and height.';
+            document.getElementById('output').style.color = 'black';
+            return;
+        }
+
+        let bmi = weight / (height * height);
+        bmi = bmi.toFixed(2);
+
+        let category;
+        let color;
+        if (bmi < 18.5) {
+            category = 'Underweight';
+            color = '#FF7043';
+        } else if (bmi >= 18.5 && bmi <= 24.9) {
+            category = 'Normal weight';
+            color = '#66BB6A';
+        } else if (bmi >= 25 && bmi <= 29.9) {
+            category = 'Overweight';
+            color = '#FFA726';
+        } else if (bmi >= 30) {
+            category = 'Obese';
+            color = '#EF5350';
+        } else {
+            category = 'Unknown';
+            color = 'black';
+        }
+
+        let outputElement = document.getElementById('output');
+        outputElement.innerText = `${category}: BMI is ${bmi}`;
+        outputElement.style.color = color;
+        }
+    </script>
+</html>

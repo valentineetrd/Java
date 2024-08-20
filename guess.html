@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .game {
+            max-width: 270px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-logo {
+            width: 100%;
+            margin-bottom: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .header-logo h1 {
+            font-size: 47px;
+            color: #00A6A6;
+        }
+        .header-logo h1 span {
+            color: #BBDEF0;
+        }
+        .header-logo p {
+            background-color: #00A6A6;
+            font-size: 17px;
+            font-weight: 500;
+            border-radius: 10px;
+            color: white;
+            width: 100%;
+        }
+        .display-screen {
+            border: 3px solid #00A6A6;
+            height: 130px;
+            width: 100%;
+            background-color: #BBDEF0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .display-screen h1 {
+            text-align: center;
+        }
+        .input-box {
+            border: 2px solid #00A6A6;
+            height: 50px;
+            width: 90px;
+            border-bottom: none;
+            border-top: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .number-box {
+            border: 2px solid #00A6A6;
+            width: 186px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            border-radius: 8px;
+        }
+        .number-box button {
+            height: 40px;
+            width: 50px;
+            border: 2px solid #BBDEF0;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 5px;
+        }
+        .guess-btn {
+            margin-top: 20px;
+        }
+        .guess-btn button {
+            height: 35px;
+            width: 75px;
+            font-size: 18px;
+            font-weight: 500;
+            background-color: #00A6A6;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="game">
+            <div class="header-logo">
+                <h1>Guess<span>Gambo</span></h1>
+                <p>Guess the hidden number</p>
+            </div>
+            <div class="display-screen">
+                <h1 id="resultMsg">Pick a Num from 0-10</h1>
+            </div>
+            <div class="input-box">
+                <h1 id="inputDisplay"></h1>
+            </div>
+            <div class="number-box">
+                <button type="button" onclick="displayNum(0)">0</button>
+                <button type="button" onclick="displayNum(1)">1</button>
+                <button type="button" onclick="displayNum(2)">2</button>
+                <button type="button" onclick="displayNum(3)">3</button>
+                <button type="button" onclick="displayNum(4)">4</button>
+                <button type="button" onclick="displayNum(5)">5</button>
+                <button type="button" onclick="displayNum(6)">6</button>
+                <button type="button" onclick="displayNum(7)">7</button>
+                <button type="button" onclick="displayNum(8)">8</button>
+                <button type="button" onclick="displayNum(9)">9</button>
+                <button type="button" onclick="displayNum(10)">10</button>
+                <button type="button" onclick="clearDisplay()"><i class="fa-solid fa-rotate-right"></i></button>
+            </div>
+            <div class="guess-btn">
+                <button type="button" onclick="displayResult()">Guess</button>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        let selectedNum;
+
+            function displayNum (number) {
+                document.getElementById('inputDisplay').innerText = number;
+                selectedNum = number;
+            }
+
+            let randomNum = Math.floor(Math.random() * 11);
+
+            function displayResult() {
+                if (isNaN(parseInt(selectedNum))) {
+                    document.getElementById('resultMsg').innerHTML = 'Pick a Num from 0-10';
+                    return
+                } 
+                
+                if (randomNum == selectedNum) {
+                    document.getElementById('resultMsg').innerHTML = `Correct, the hidden number is (${randomNum})`;
+                } else {
+                    document.getElementById('resultMsg').innerHTML = `Wrong, the hidden number is (${randomNum})<br><br>
+                    Try again!`;
+                }  
+            }
+
+            function clearDisplay () {
+                document.getElementById('inputDisplay').textContent = '';
+                document.getElementById('resultMsg').textContent = 'Pick a Num from 0-10';
+
+                randomNum = Math.floor(Math.random() * 11);
+                selectedNum = null;
+            }
+    </script>
+    <script src="https://kit.fontawesome.com/2647c2622b.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

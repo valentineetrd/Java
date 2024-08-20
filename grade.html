@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input"  type="number">
+    <button onclick="gradecheck()">Check grade</button>
+</body>
+</html>
+<script>
+    function gradecheck() {
+        let input  = document.getElementById('input')
+        if (input.value >=80 &&  input.value<=100){
+           alert(' The grade is = A')
+        } else if(input.value >=70 && input.value <=79){
+           alert('The Grade is = B')
+        } else if(input.value >= 60 && input.value <=69){
+            alert('The Grade is = C')
+        } else if (input.value >= 50 && input.value <=59){
+            alert('The Grade is = D')
+        } else if(input.value >=0 && input.value <=49){
+            alert('The Grade is = F')
+        } else if(input.value >100){
+            alert('Invalid Input, Enter a valid number')
+        }
+    }
+</script>
