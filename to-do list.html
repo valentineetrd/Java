@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button onclick="addTodo(event)" class="button1" id="ourButton"> addTodo </button>
+    <div id="div">
+
+
+    </div>
+
+</body>
+
+</html>
+<script>
+    // const products = [
+    //     { product: 'banana', price: 3 },
+    //     { product: 'mango', price: 6 },
+    //     { product: 'potato', price: ' ' },
+    //     { product: 'avocado', price: 8 },
+    //     { product: 'coffee', price: 10 },
+    //     { product: 'tea', price: '' },
+    // ]
+
+    // let total = products.map((productObj) => productObj.price
+    // ).filter((num) => num !== '' && num !== ' ').reduce((a, c) => a + c, 0)
+    // console.log(total);
+    let div = document.getElementById('div')
+    let todos = []
+
+    function addTodo(e) {
+        console.log(e);
+        let input = e.target.previousElementSibling
+        console.log(input);
+        if (input.value.trim()) {
+            let todoObj = {
+                todo: input.value.trim()
+            }
+
+            todos.push(todoObj)
+            display()
+            console.log(todos);
+        } else {
+            alert('input field is mandatory')
+        }
+    }
+
+    function grabIndex(index) {
+        let newValue = prompt('edit value', `${todos[index].todo}`)
+        console.log(index);
+        todos.splice(index, 1, { todo: newValue })
+        display()
+    }
+
+    function display() {
+        div.innerHTML = ''
+        todos.forEach((todoObj, i) => {
+            div.innerHTML += `<p>${todoObj.todo} <button onclick="grabIndex(${i})"> edit </button> </p> `
+        })
+    }
+</script>

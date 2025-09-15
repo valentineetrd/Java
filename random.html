@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="password" oninput="search(event)">
+    <div id="preview">
+
+    </div> -->
+    <input type="password" id="passwordInput"><button onclick="showAndHide(event)" id="button">show</button>
+    <input type="number" id="numbers"><button onclick=""> go down</button><button onclick="goUp()"> go up</button>
+</body>
+</html>
+<script>
+    // let arr = ['rice', 'beans' , 'onions' , 'potatoes']
+
+    // arr.forEach((product) => {
+    //     preview.innerHTML += `<h1>${product}</h1>`
+    // })
+
+    // function search(ev) {
+    //     let myValue = ev.target.value
+    //     let filterArr = arr.filter((product) => {
+    //         return product.includes(myValue)
+    //     })
+      
+
+    //     if (filterArr.length === 0){
+    //     preview.innerHTML = `product is not found`
+    //     } else{
+    //         preview.innerHTML = ''
+    //         filterArr.forEach((product) => {
+    //         preview.innerHTML += `<h1>${product}</h1>`
+    //       })
+    //     }
+
+    //     console.log(filterArr);
+    // }
+
+function showAndHide (){
+    if (passwordInput.type === 'password' ){
+        passwordInput.type = 'text'
+        button.innerHTML = 'hide'
+    } else {
+        passwordInput.type = 'password'
+        button.innerHTML = 'show'
+    }
+}
+
+function goUp(params) {
+    let numberInputValue = Number(document.getElementById('numbers').value)
+    numberInputValue++
+    document.getElementById('numbers').value = numberInputValue
+}
+
+</script>

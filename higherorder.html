@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- forEach map rfeudce some every fidIndex filter -->
+</body>
+</html>
+<script>
+    let arr = [1,2,3,4,6]
+    let nameArr = [{name : 'dann' , class: 'ss3' ,} , {name:'daniel', class:"jss3"}]
+    // arr.forEach( (num , index , array ) => {
+    //     console.log(`2 * ${index} = ${2 * index}`);
+        
+    // })
+    console.log(arr.map((num,  index, array)=>{
+        console.log('hello');
+        return 2
+        
+    }));
+    
+    let total = arr.reduce((a ,b)=> a - b, 0)
+    console.log(total);
+    
+let doesARRHAVEVALUE5 = arr.some((num) => typeof num =="number")
+console.log(doesARRHAVEVALUE5);
+
+let finddaniel = nameArr.find((name) => name.name === 'daniel')
+console.log(finddaniel);
+
+let findddaniel = nameArr.findIndex((name) => name.name === 'daniel')
+console.log(findddaniel);
+
+</script>

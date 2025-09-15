@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+   const products = [
+  { product: 'banana', price: 3 },
+  { product: 'mango', price: 6 },
+  { product: 'potato', price: ' ' },
+  { product: 'avocado', price: 8 },
+  { product: 'coffee', price: 10 },
+  { product: 'tea', price: '' },
+];
+// const totalPrice = products
+//   .filter(product => typeof product.price === 'number' && product.price > 0) // Filter valid prices
+//   .map(product => product.price) // Map to extract prices
+//   .reduce((acc, current) => acc + current, 0); // Reduce to sum prices
+// console.log(`The total price is ${totalPrice}`);
+
+    let productsArr = products.map(function(product0bj){
+        return product0bj.price
+        
+    })
+    console.log(productsArr);
+
+    let filteredArr = productsArr.filter((num) => num!= '' && num !==' ')
+
+    let total = filteredArr.reduce((a,c) => a+c, 0)
+    console.log(total);
+    
+
+</script>

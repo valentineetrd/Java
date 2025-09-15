@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app {
+    height: 60%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-arrow {
+    border: 1.5px solid #8d99ae;
+    margin-right: 25px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.right-arrow {
+    border: 1.5px solid #8d99ae;
+    margin-left: 25px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.left-arrow i,
+.right-arrow i {
+    color: #333333;
+    transition: color 0.3s ease;
+}
+
+.left-arrow i:hover,
+.right-arrow i:hover {
+    color: #90CAF9;
+}
+
+.carousel-container {
+    height: 74%;
+    width: 60%;
+    overflow: hidden;
+    position: relative;
+}
+
+.card {
+    border: 1px solid #8d99ae;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+}
+
+.card.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.card.hidden-left {
+    transform: translateX(-100%);
+}
+
+.card.hidden-right {
+    transform: translateX(100%);
+}
+
+.logo-container {
+    width: 98%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.id-logo {
+    width: 63%;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.id-logo span {
+    height: 30px;
+    width: 60px;
+    background-color: #005f73;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.id-logo h1 {
+    margin-top: 10px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    color: #003049;
+}
+
+.id-card {
+    margin-top: 2px;
+    width: 98%;
+}
+
+.id-image {
+    border: 2px solid #005f73;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.id-image img {
+    height: 120px;
+    width: 100px;
+    object-fit: cover;
+}
+
+.id-card-header h2 {
+    width: 150px;
+    font-size: 18px;
+    padding: 5px;
+    background-color: #005f73;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
+}
+
+.id-card-text {
+    padding-left: 8px;
+    font-weight: 700;
+}
+
+.id-card-text p {
+    color: #003049;
+}
